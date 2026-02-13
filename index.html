@@ -8,39 +8,47 @@
 </head>
 
 <body>
+
   <header class="topbar">
     <div class="brand">★ Nuestro 1er Año ★</div>
     <div class="hint">⬇️ baja</div>
   </header>
 
   <main class="world">
-    <!-- CIELO -->
+
+    <!-- ESCENA INICIAL -->
     <section class="scene">
       <div class="cloud c1"></div>
       <div class="cloud c2"></div>
 
       <h1 class="title">
-        Ale, gracias por este año. <br />
+        Ale, gracias por este año.<br />
         <span class="subtitle">Hecho con amor + pixeles.</span>
       </h1>
 
       <div class="row">
-        <a class="block qblock" href="#timeline" aria-label="Ir al timeline"></a>
-        <a class="block brick" href="#momentos" aria-label="Ir a momentos"></a>
-        <a class="block qblock" href="#carta" aria-label="Ir a carta"></a>
+        <a class="block qblock" href="#timeline"></a>
+        <a class="block brick" href="#momentos"></a>
+        <a class="block qblock" href="#carta"></a>
       </div>
 
       <p class="tap">Tip: toca los bloques 👆</p>
+
+      <!-- CONTADOR -->
+      <div id="counter" style="margin-top:18px;font-weight:bold;"></div>
     </section>
+
 
     <!-- TIMELINE -->
     <section id="timeline" class="panel">
       <h2>📼 Timeline</h2>
+
       <div class="cards">
+
         <div class="card">
           <div class="badge">START</div>
-          <h3>11 mayo 2024</h3>
-          <p>El inicio formal. No perfecto. Verdadero.</p>
+          <h3>15 febrero 2025</h3>
+          <p>El inicio oficial de nuestro mundo 1-1.</p>
         </div>
 
         <div class="card">
@@ -54,13 +62,15 @@
           <h3>Lo difícil</h3>
           <p>Lo hablamos. Lo sostuvimos. Crecimos.</p>
         </div>
+
       </div>
     </section>
 
-    <!-- MOMENTOS / GALERÍA -->
+
+    <!-- MOMENTOS -->
     <section id="momentos" class="panel">
       <h2>🧩 Momentos</h2>
-      <p class="small">Aquí puedes poner 6–12 “bloquecitos” con fotos o frases.</p>
+      <p class="small">Pequeños power-ups de este año.</p>
 
       <div class="grid">
         <div class="tile">🧡 Paz</div>
@@ -72,48 +82,60 @@
       </div>
     </section>
 
+
     <!-- CARTA -->
     <section id="carta" class="panel">
       <h2>💌 Carta</h2>
+
       <div class="letter">
         <p>Ale,</p>
+
         <p>
-          Gracias por este año. Gracias por sostener, por intentar, por construir conmigo.
-          Si este sitio fuera un juego, tú fuiste el lugar seguro donde se puede respirar.
+          Gracias por este año.  
+          Gracias por elegir quedarte.  
+          Gracias por construir sin huir.
         </p>
+
         <p>
-          Te elijo con calma. Y con ganas.
+          Si esta historia fuera un juego,
+          tú eres el lugar donde puedo guardar partida.
         </p>
+
         <p class="sig">— Jona</p>
       </div>
-
-      <button class="btn" id="btnCoin">🪙 Toma una moneda</button>
-      <div class="coin" id="coin" aria-hidden="true"></div>
     </section>
 
-    <footer class="footer">
-      <div class="ground"></div>
-      <p>Hecho para Ale • 2026</p>
-    </footer>
+
+    <!-- GAME CONTINUES -->
+    <section class="panel" style="text-align:center;">
+      <h2>🎮 GAME CONTINUES…</h2>
+      <p>¿Jugamos el siguiente año?</p>
+
+      <button class="btn" onclick="continueGame()">▶ CONTINUE</button>
+
+      <div id="continueMessage" style="margin-top:15px;font-weight:bold;"></div>
+    </section>
+
   </main>
 
-  <audio id="sfx" preload="auto">
-    <!-- opcional: mete un coin.mp3 en la raíz y descomenta -->
-    <!-- <source src="coin.mp3" type="audio/mpeg"> -->
-  </audio>
 
+  <!-- SCRIPTS -->
   <script>
-    const btn = document.getElementById('btnCoin');
-    const coin = document.getElementById('coin');
-    const sfx = document.getElementById('sfx');
+    // CONTINUE BUTTON
+    function continueGame() {
+      document.getElementById("continueMessage").innerHTML =
+        "Siempre elijo jugar este juego contigo ❤️";
+    }
 
-    btn.addEventListener('click', () => {
-      coin.classList.remove('pop');
-      void coin.offsetWidth; // restart animation
-      coin.classList.add('pop');
+    // CONTADOR DESDE 15 FEB 2025
+    const startDate = new Date("2025-02-15");
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-      // sfx.play().catch(()=>{});
-    });
+    document.getElementById("counter").innerHTML =
+      `🕒 Llevamos ${diffDays} días en este nivel`;
   </script>
+
 </body>
 </html>
