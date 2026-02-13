@@ -221,3 +221,18 @@ body{
 .cloud::after{ width:86px; height:86px; left:64px; top:-36px; }
 .c1{ left: 8%; top: 22px; opacity:.75; }
 .c2{ right: 10%; top: 56px; opacity:.6; }
+
+/* Nubes en movimiento */
+.cloud {
+  animation: drift 32s linear infinite;
+  will-change: transform;
+}
+
+/* Desfase para que no vayan igual */
+.c1 { animation-duration: 38s; }
+.c2 { animation-duration: 52s; }
+
+@keyframes drift {
+  0%   { transform: translateX(-140px); }
+  100% { transform: translateX(calc(100vw + 140px)); }
+}
