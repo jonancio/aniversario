@@ -255,3 +255,20 @@ body{
   opacity:.75;
   font-weight:600;
 }
+
+a.tile{
+  text-decoration: none;
+  color: inherit;
+}
+
+.chest{
+  background: rgba(255,255,255,.9);
+  border: 2px solid rgba(0,0,0,.18);
+  box-shadow: 0 10px 0 rgba(0,0,0,.12);
+  transition: transform .1s ease;
+}
+
+.chest:hover{
+  transform: translateY(-3px);
+}
+
