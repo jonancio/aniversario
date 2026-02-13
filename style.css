@@ -22,6 +22,7 @@ body{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color:var(--ink);
   background:var(--sky);
+  overflow-x: hidden;
 }
 
 .topbar{
@@ -233,6 +234,6 @@ body{
 .c2 { animation-duration: 52s; }
 
 @keyframes drift {
-  0%   { transform: translateX(-140px); }
-  100% { transform: translateX(calc(100vw + 140px)); }
+  0%   { transform: translateX(-220px); }
+  100% { transform: translateX(calc(100vw + 220px)); }
 }
