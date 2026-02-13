@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Para Ale — 1 año</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">★ Nuestro 1er Año ★</div>
+    <div class="hint">⬇️ baja</div>
+  </header>
+
+  <main class="world">
+    <!-- CIELO -->
+    <section class="scene">
+      <div class="cloud c1"></div>
+      <div class="cloud c2"></div>
+
+      <h1 class="title">
+        Ale, gracias por este año. <br />
+        <span class="subtitle">Hecho con amor + pixeles.</span>
+      </h1>
+
+      <div class="row">
+        <a class="block qblock" href="#timeline" aria-label="Ir al timeline"></a>
+        <a class="block brick" href="#momentos" aria-label="Ir a momentos"></a>
+        <a class="block qblock" href="#carta" aria-label="Ir a carta"></a>
+      </div>
+
+      <p class="tap">Tip: toca los bloques 👆</p>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="panel">
+      <h2>📼 Timeline</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="badge">START</div>
+          <h3>11 mayo 2024</h3>
+          <p>El inicio formal. No perfecto. Verdadero.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">LEVEL 1</div>
+          <h3>Momentos que sumaron</h3>
+          <p>Risas, paz, aprendernos… y elegirnos.</p>
+        </div>
+
+        <div class="card">
+          <div class="badge">BOSS</div>
+          <h3>Lo difícil</h3>
+          <p>Lo hablamos. Lo sostuvimos. Crecimos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTOS / GALERÍA -->
+    <section id="momentos" class="panel">
+      <h2>🧩 Momentos</h2>
+      <p class="small">Aquí puedes poner 6–12 “bloquecitos” con fotos o frases.</p>
+
+      <div class="grid">
+        <div class="tile">🧡 Paz</div>
+        <div class="tile">😂 Risa</div>
+        <div class="tile">🤝 Equipo</div>
+        <div class="tile">🏡 Casa</div>
+        <div class="tile">🌙 Noches</div>
+        <div class="tile">✨ Futuro</div>
+      </div>
+    </section>
+
+    <!-- CARTA -->
+    <section id="carta" class="panel">
+      <h2>💌 Carta</h2>
+      <div class="letter">
+        <p>Ale,</p>
+        <p>
+          Gracias por este año. Gracias por sostener, por intentar, por construir conmigo.
+          Si este sitio fuera un juego, tú fuiste el lugar seguro donde se puede respirar.
+        </p>
+        <p>
+          Te elijo con calma. Y con ganas.
+        </p>
+        <p class="sig">— Jona</p>
+      </div>
+
+      <button class="btn" id="btnCoin">🪙 Toma una moneda</button>
+      <div class="coin" id="coin" aria-hidden="true"></div>
+    </section>
+
+    <footer class="footer">
+      <div class="ground"></div>
+      <p>Hecho para Ale • 2026</p>
+    </footer>
+  </main>
+
+  <audio id="sfx" preload="auto">
+    <!-- opcional: mete un coin.mp3 en la raíz y descomenta -->
+    <!-- <source src="coin.mp3" type="audio/mpeg"> -->
+  </audio>
+
+  <script>
+    const btn = document.getElementById('btnCoin');
+    const coin = document.getElementById('coin');
+    const sfx = document.getElementById('sfx');
+
+    btn.addEventListener('click', () => {
+      coin.classList.remove('pop');
+      void coin.offsetWidth; // restart animation
+      coin.classList.add('pop');
+
+      // sfx.play().catch(()=>{});
+    });
+  </script>
+</body>
+</html>
