@@ -44,33 +44,32 @@
     </section>
 
 
-    <!-- TIMELINE -->
-    <section id="timeline" class="panel">
-      <h2>📼 Timeline</h2>
-
-      <div class="cards">
-
-        <div class="card">
-          <div class="badge">START</div>
-          <h3>15 febrero 2025</h3>
-          <p>El inicio oficial de nuestro mundo 1-1.</p>
-        </div>
-
-        <div class="card">
-          <div class="badge">LEVEL 1</div>
-          <h3>Momentos que sumaron</h3>
-          <p>Risas, paz, aprendernos… y elegirnos.</p>
-        </div>
-
-        <div class="card">
-          <div class="badge">BOSS</div>
-          <h3>Lo difícil</h3>
-          <p>Lo hablamos. Lo sostuvimos. Crecimos.</p>
-        </div>
-
+    <!-- TIMELINE INTERACTIVA -->
+    <section id="timeline" class="panel timeline-panel">
+      <h2>🗺️ Nuestro mapa de aventuras</h2>
+      <p class="small">Cinco niveles, muchos recuerdos. Puedes explorarlos en el orden que quieras.</p>
+      <div class="level-status" id="levelStatus" aria-live="polite">0 de 5 recuerdos visitados</div>
+      <div class="level-map" id="levelMap" aria-label="Mapa de recuerdos">
+        <div class="level-path" aria-hidden="true"></div>
+        <button class="level-node" type="button" data-level="0"><span class="level-number">1</span><span class="level-name">El comienzo</span></button>
+        <button class="level-node" type="button" data-level="1"><span class="level-number">2</span><span class="level-name">Aventuras</span></button>
+        <button class="level-node" type="button" data-level="2"><span class="level-number">3</span><span class="level-name">Nuestro hogar</span></button>
+        <button class="level-node" type="button" data-level="3"><span class="level-number">4</span><span class="level-name">Ser equipo</span></button>
+        <button class="level-node" type="button" data-level="4"><span class="level-number">5</span><span class="level-name">Siguiente nivel</span></button>
       </div>
+      <p class="small timeline-tip">★ Toca cualquier nivel para descubrir su historia. Los visitados guardan una estrella.</p>
     </section>
 
+    <dialog id="levelDialog" class="level-dialog" aria-labelledby="levelTitle">
+      <div class="level-dialog-inner">
+        <div class="level-dialog-top"><span id="levelLabel">LEVEL 1</span><button type="button" class="level-close" id="levelClose" aria-label="Cerrar recuerdo">✕</button></div>
+        <div class="level-illustration" id="levelIllustration" aria-hidden="true">❤️</div>
+        <h2 id="levelTitle"></h2>
+        <p class="level-date" id="levelDate"></p>
+        <p id="levelDescription"></p>
+        <button type="button" class="btn level-complete" id="levelComplete">★ Guardar recuerdo</button>
+      </div>
+    </dialog>
 
     <!-- MOMENTOS -->
     <section id="momentos" class="panel">
@@ -129,6 +128,8 @@
 
   </main>
 
+
+  <script src="timeline.js" defer></script>
 
   <!-- SCRIPTS -->
   <script>
