@@ -272,3 +272,42 @@ a.tile{
   transform: translateY(-3px);
 }
 
+
+/* Mapa de recuerdos: libre, accesible y adaptable */
+.timeline-panel { overflow: hidden; }
+.level-status { margin: 10px 6px; font-weight: 800; color: #225f2c; }
+.level-map { position: relative; min-height: 380px; padding: 20px; border: 4px solid #3a8541; border-radius: 18px; background: repeating-linear-gradient(0deg, transparent 0 31px, rgba(255,255,255,.14) 32px 34px), linear-gradient(145deg,#9fe3ff 0%,#7ec8ff 62%,#83ca7d 62%); }
+.level-path { position: absolute; inset: 16% 12%; border: 8px dashed rgba(255,255,255,.8); border-radius: 45%; transform: rotate(-12deg); pointer-events:none; }
+.level-node { position:absolute; z-index:1; display:flex; flex-direction:column; align-items:center; gap:6px; width:132px; border:0; background:transparent; color:#1a1a1a; font:inherit; font-weight:800; cursor:pointer; }
+.level-node:nth-of-type(1) { left:5%; bottom:12%; }
+.level-node:nth-of-type(2) { left:25%; top:16%; }
+.level-node:nth-of-type(3) { left:45%; bottom:14%; }
+.level-node:nth-of-type(4) { right:13%; top:13%; }
+.level-node:nth-of-type(5) { right:2%; bottom:19%; }
+.level-number { display:grid; place-items:center; width:62px; height:62px; border:4px solid #684116; border-radius:12px; background:#f4b91d; box-shadow:0 7px 0 #a9750a; font-size:26px; transition:transform .15s ease; }
+.level-node:hover .level-number, .level-node:focus-visible .level-number { transform:translateY(-5px); }
+.level-node:focus-visible { outline:3px solid #132b5a; outline-offset:5px; border-radius:10px; }
+.level-node.visited .level-number { background:#9ae36b; border-color:#31682e; box-shadow:0 7px 0 #4d9a40; }
+.level-node.visited .level-number::after { content:"★"; position:absolute; margin: -58px 0 0 55px; color:#ffeb54; text-shadow:1px 2px #725000; font-size:23px; }
+.level-name { background:#fff9e8; padding:5px 7px; border:2px solid #503f27; border-radius:8px; font-size:12px; }
+.timeline-tip { margin-top:15px; }
+.level-dialog { width:min(92vw,490px); max-height:85vh; overflow:auto; padding:0; border:4px solid #49351d; border-radius:16px; box-shadow:0 12px 0 rgba(0,0,0,.2); background:#fff7e6; color:#1a1a1a; }
+.level-dialog::backdrop { background:rgba(8,22,38,.7); }
+.level-dialog-inner { padding:20px; text-align:center; }
+.level-dialog-top { display:flex; align-items:center; justify-content:space-between; font-weight:900; color:#8a4e0b; }
+.level-close { border:2px solid #49351d; background:white; border-radius:8px; padding:7px 12px; cursor:pointer; font-size:18px; }
+.level-illustration { font-size:58px; margin:10px auto; }
+.level-date { font-weight:800; color:#74501e; }
+.level-complete { background:#ffdc66; margin:14px auto 8px; }
+@media(max-width:620px) {
+  .level-map { min-height:560px; padding:10px; }
+  .level-path { inset:12% 25%; transform:rotate(10deg); }
+  .level-node { width:115px; }
+  .level-node:nth-of-type(1) { left:3%; bottom:5%; }
+  .level-node:nth-of-type(2) { left:40%; bottom:23%; top:auto; }
+  .level-node:nth-of-type(3) { left:3%; bottom:43%; }
+  .level-node:nth-of-type(4) { right:4%; top:20%; }
+  .level-node:nth-of-type(5) { left:4%; top:3%; bottom:auto; right:auto; }
+  .level-number { width:54px; height:54px; }
+}
+@media(prefers-reduced-motion:reduce) { .level-number { transition:none; } }
